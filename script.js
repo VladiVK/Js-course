@@ -40,8 +40,9 @@ if (appData.moneyPerDay < 100) {
         console.log('minimum level of rich');
         break;
     case appData.moneyPerDay < 500:
-        console.log('middle level of rich');
-        break;
+//  case appData.moneyPerDay == 30:
+//         console.log('test is correct');
+//         break;
     case appData.moneyPerDay > 500:
         console.log('high level of rich');
         break;
