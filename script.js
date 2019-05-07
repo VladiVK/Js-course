@@ -1,6 +1,18 @@
 // Budgete application. preliminary
 
 let money, time;
+let appData = {
+    budget: money,
+    expenses: {},
+    optionalExpenses: {},
+    income: [],
+    savings: true
+};
+start();
+detectDayBudget();
+checkSavings();
+// detectLevel(appData.moneyPerDay);
+// chooseOptExpenses();
 
 function start() {
     money = +prompt("Ваш бюджет на месяц?", "");
@@ -10,16 +22,6 @@ function start() {
         money = +prompt("Ваш бюджет на месяц?", "");
     }
 }
-
-start();
-
-let appData = {
-    budget: money,
-    expenses: {},
-    optionalExpenses: {},
-    income: [],
-    savings: true
-};
 function detectDayBudget() {
     for (let i = 0; i < 1; i++) {
         let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
@@ -37,7 +39,7 @@ function detectDayBudget() {
     return alert("Your one day budgete is: " + (appData.moneyPerDay));
 }
 
-detectDayBudget();
+
 
 function detectLevel(sum) {
     if (sum < 100) {
@@ -50,7 +52,7 @@ function detectLevel(sum) {
         alert('uknown info');
     }
 }
-// detectLevel(appData.moneyPerDay);
+
 
 function chooseOptExpenses() {
     for (let i = 0; i < 3; i++) {
@@ -62,7 +64,7 @@ function chooseOptExpenses() {
         }
     }
 }
-// chooseOptExpenses();
+
 
 function checkSavings() {
     if (appData.savings == true) {
@@ -73,7 +75,7 @@ function checkSavings() {
         alert( 'Ежемесячный доход с вашего депозита: ' + appData.monthIncome);
     }
 }
-checkSavings();
+
 
 /* switch (true) {
     case appData.moneyPerDay < 100:
@@ -90,3 +92,5 @@ checkSavings();
         console.log('uknown info');
         break;
 } */
+
+
